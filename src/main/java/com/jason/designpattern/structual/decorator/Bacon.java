@@ -1,4 +1,4 @@
-package com.jason.designpattern.decorator;
+package com.jason.designpattern.structual.decorator;
 
 import java.math.BigDecimal;
 

@@ -1,9 +1,9 @@
 package com.jason.designpattern;
 
-import com.jason.designpattern.decorator.Bacon;
-import com.jason.designpattern.decorator.Cheese;
-import com.jason.designpattern.decorator.Pizza;
-import com.jason.designpattern.decorator.ThickCrustPizza;
+import com.jason.designpattern.structual.decorator.Bacon;
+import com.jason.designpattern.structual.decorator.Cheese;
+import com.jason.designpattern.structual.decorator.Pizza;
+import com.jason.designpattern.structual.decorator.ThickCrustPizza;
 import org.junit.Test;
 
 public class DecoratorTest {

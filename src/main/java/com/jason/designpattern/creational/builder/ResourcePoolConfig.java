@@ -1,13 +1,19 @@
 package com.jason.designpattern.creational.builder;
 
 /**
- * pros:
+ * Builder used to construct complex object
+ * cons:
  * 1. No need of too many constructors.
  * 2. If need validation on input,
  *    validation can be implemented in build method instead of spreading in different set method.
+ *    Especially, when need to validate params dependencies.
  * 3. Comparing with using set method, builder will not generate invalid middle state.
+ * 4. Used when do not want to expose set method to allow people to change single param.
  *
- * Cons:
+ * Pros:
+ * 1. do not use when object is simple
+ * 2. field params need to duplicated in builder
+ *
  */
 public class ResourcePoolConfig {
     private String name;
@@ -91,6 +97,14 @@ public class ResourcePoolConfig {
 
         private void validate() {
             //validate params here
+            if (name == null) {
+                throw new IllegalArgumentException("Name cannot be null");
+            }
+
+            //validation involves dependencies can be placed here, otherwise need to place in different set method
+            if (maxIdle > maxTotal) {
+                throw new IllegalArgumentException("maxIdle cannot be greater than max total");
+            }
         }
     }
 }
